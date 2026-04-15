@@ -1,9 +1,12 @@
-echo 正在开始部署快速聊天模型中
-echo 第一步：下载软件
+#!/bin/bash
+chmod +x ./
 curl -fsSL https://ollama.com/install.sh | sh
-echo 第二步：开启模型服务
+echo 下载成功
+export OLLAMA_HOST="0.0.0.0"
 ollama serve &
-echo 第三步：下载聊天模型
+sleep 5
+echo 服务启动完成
 ollama pull qwen3:0.6b
-echo 已完成所有步骤，以后仅需执行ollama serve和ollama run qwen3:0.6b即可
 ollama run qwen3:0.6b
+echo 部署成功
+echo 本地模型部署成功
